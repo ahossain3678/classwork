@@ -19,8 +19,9 @@ public class CodingConventions {
 			//instantiate variables now
 			// there are two variables called "name" the local variable and the field
 			// distinguish between the two using the reserved word "this"
-			name = "Mr.Nockles";
-			description = " is a teacher at BTHS";
+			this.name = name;
+			// this is a static call to a constant
+			description = IntroMain.DESCRIPTIONS[descriptionIndex];
 		}
 		public void doStuff() {
 			String output = name + description;
