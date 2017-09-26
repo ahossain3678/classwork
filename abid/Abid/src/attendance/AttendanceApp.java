@@ -3,9 +3,9 @@ package attendance;
 import java.util.Scanner;
 
 public class AttendanceApp {
+ 
 
-
-	private Attendee[] students;
+	private Attendee[] students;   
 
 
 

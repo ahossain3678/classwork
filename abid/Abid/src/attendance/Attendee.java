@@ -10,7 +10,7 @@ public interface Attendee {
 	 */
 	
 	//returns true if the student has been marked present, false otherwise
-	boolean isPresent();
+	boolean isPresent();  
 
 	//sets whether the student has been marked present
 	void setPresent(boolean present);
