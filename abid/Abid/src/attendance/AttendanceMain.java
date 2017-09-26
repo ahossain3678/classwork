@@ -30,7 +30,7 @@ public class AttendanceMain {
 		while(s.length() > 0){
 
 			String currentCut = "";
-			String nextWord = "";
+			String nextWord = "";   
 
 			//while the current cut is still less than the line length 
 			//AND there are still words left to add

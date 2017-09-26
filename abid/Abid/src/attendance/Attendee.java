@@ -7,7 +7,7 @@ public interface Attendee {
 	 * constructor that takes two parameters: firstName and lastName.
 	 * Use these values to instantiate corresponding fields.
 	 * @return
-	 */
+	 */ 
 	
 	//returns true if the student has been marked present, false otherwise
 	boolean isPresent();  
