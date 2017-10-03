@@ -11,6 +11,11 @@ public class Student implements Attendee{
 	 * Use these values to instantiate corresponding fields.
 	 * @return
 	 */
+	 
+	 public Student(String first, String last){
+		firstName = first;
+		lastName = last;
+	}
 	
 	//returns true if the student has been marked present, false otherwise
 	public boolean isPresent(){
@@ -50,8 +55,13 @@ public class Student implements Attendee{
 
 	
 	//returns true if 'first' matches this Attendee's firstName. This should NOT be case sensitive.
-	public boolean matches(String last){
-	    return true;
+	public boolean matches(String first){
+	    if(first.equals(firstName)){
+	    	return true;
+	    }
+	    else{
+	    	return false;
+	    }
 	}
 
 	//returns three words separated by 20 spaces: 
@@ -68,4 +78,3 @@ public class Student implements Attendee{
 
 	
 }
-
