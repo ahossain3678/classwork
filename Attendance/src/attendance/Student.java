@@ -4,7 +4,7 @@ public class Student implements Attendee{
 	
 	private String firstName;
 	private String lastName;
-	private String reportString;
+	private boolean isHere;
 	
 	/**In addition to the following methods, please include a 
 	 * constructor that takes two parameters: firstName and lastName.
@@ -19,17 +19,21 @@ public class Student implements Attendee{
 	
 	//returns true if the student has been marked present, false otherwise
 	public boolean isPresent(){
-	    return true;
-	    
+	    if(isHere){
+	    	return true;
+	    }
+	    else{
+	    	return false;
+	    }
 	}
 
 	//sets whether the student has been marked present
 	public void setPresent(boolean present){
 	    if(present){
-	        
+	        isHere = true;
 	    }
 	    else{
-	        
+	        isHere = false;
 	    }
 	}
 
@@ -72,9 +76,26 @@ public class Student implements Attendee{
 	//if last name or first name is longer than 20 characters, 
 	//cut off the last three letters and replace with "..."
 	public String getReportString(){
-	    return reportString;
+		if(lastName.length() > 20){
+			lastName = lastName.substring(0,17) + "...";
+		}
+		
+	    while(last.length() < 20){
+	    	lastName += " ";
+	    }
+	    
+	   	String name = lastName + firstName;
+	    	
+	    while(name.length() < 40){
+	    	name += " ";
+	    }
+	    
+	    if(present){
+	    	return name + "PRESENT";
+	    }
+	    else{
+	    	return name + "ABSENT";
+	    }
 	}
-	
 
-	
 }
