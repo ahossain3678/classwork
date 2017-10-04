@@ -1,3 +1,4 @@
+
 package attendance;
 
 public class Student implements Attendee{
@@ -13,8 +14,8 @@ public class Student implements Attendee{
 	 */
 	 
 	 public Student(String first, String last){
-		firstName = first;
-		lastName = last;
+		this.firstName = first;
+		this.lastName = last;
 	}
 	
 	//returns true if the student has been marked present, false otherwise
@@ -29,12 +30,7 @@ public class Student implements Attendee{
 
 	//sets whether the student has been marked present
 	public void setPresent(boolean present){
-	    if(present){
-	        isHere = true;
-	    }
-	    else{
-	        isHere = false;
-	    }
+	    this.isHere = present;
 	}
 
 	//returns the firstName
@@ -49,7 +45,7 @@ public class Student implements Attendee{
 
 	//returns true if 'first' and 'last' match this Attendee's firstName and lastName. This should NOT be case sensitive. 
 	public boolean mathces(String first, String last){
-	    if(first.equals(firstName) && last.equals(lastName)){
+	    if(first.toLowerCase().equals(firstName.toLowerCase()) && last.toLowerCase().equals(lastName.toLowerCase())){
 	        return true;
 	    }
 	    else{
@@ -58,9 +54,9 @@ public class Student implements Attendee{
 	}
 
 	
-	//returns true if 'first' matches this Attendee's firstName. This should NOT be case sensitive.
-	public boolean matches(String first){
-	    if(first.equals(firstName)){
+	//returns true if 'last' matches this Attendee's lastName. This should NOT be case sensitive.
+	public boolean matches(String last){
+	    if(last.toLowerCase().equals(lastName.toLowerCase())){
 	    	return true;
 	    }
 	    else{
@@ -77,10 +73,13 @@ public class Student implements Attendee{
 	//cut off the last three letters and replace with "..."
 	public String getReportString(){
 		if(lastName.length() > 20){
+		lastName = lastName.substring(0,17) + "...";
+		}
+		if(lastName.length() > 20){
 			lastName = lastName.substring(0,17) + "...";
 		}
 		
-	    while(last.length() < 20){
+	    while(lastName.length() < 20){
 	    	lastName += " ";
 	    }
 	    
@@ -90,11 +89,11 @@ public class Student implements Attendee{
 	    	name += " ";
 	    }
 	    
-	    if(present){
-	    	return name + "PRESENT";
+	    if(isHere){
+	    	return name + "PRESENT"+"\n";
 	    }
 	    else{
-	    	return name + "ABSENT";
+	    	return name + "ABSENT" +"\n";
 	    }
 	}
 
