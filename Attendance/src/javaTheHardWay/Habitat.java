@@ -45,7 +45,7 @@ public class Habitat extends Environment{
 	public void removeAnimal(int i) {
 		animals[i] = null;
 	}
-	public voidRemoveAnimal(Animal a) {
+	public void removeAnimal(Animal a) {
 		for(int i = 0; i < animals.length; i++) {
 			if(animals[i] == a)animals[i] = null;
 		}
