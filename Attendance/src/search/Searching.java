@@ -54,18 +54,20 @@ public class Searching {
 	}
 
 
-	private int binarySearch(int[] searchThis, int startIndex, int endIndex, int target) {
-		if(){
+	public int binarySearch(int[] nums, int start, int finish, int target) {
+		if(start > finish) return -1;
+		else
+			{
+				int mid = (start+finish)/2;
 			
-		}
-		else {
-			
-			binarySearch(searchThis,,,target);
-		}
-		return -1;
+		if (nums[mid]==target) return mid;
+			else if (target<mid)
+			{
+				return binarySearch(nums, start, mid-1, target);
+			}
+				else return binarySearch(nums, mid+1,finish, target);
+			}
 	}
-	
-
 	private int search(int[] searchThis, int target) {
 		for(int i=0;i<searchThis.length;i++) {
 			delay();
